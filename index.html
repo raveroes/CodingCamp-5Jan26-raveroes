@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Todo List</h1>
+        
+        <div class="input-row">
+            <input type="text" id="taskInput" class="task-input" placeholder="Add a todo...">
+            <input type="date" id="dateInput" class="date-input">
+            <button id="addButton" class="add-button">+</button>
+        </div>
+        
+        <div class="action-buttons">
+            <button id="filterButton" class="filter-button">FILTER</button>
+            <button id="deleteAllButton" class="delete-all-button">DELETE ALL</button>
+        </div>
+        
+        <div class="table-container">
+            <table class="todo-table">
+                <thead>
+                    <tr>
+                        <th>TASK</th>
+                        <th>DUE DATE</th>
+                        <th>STATUS</th>
+                        <th>ACTIONS</th>
+                    </tr>
+                </thead>
+                <tbody id="todoTableBody">
+                    <tr class="empty-state">
+                        <td colspan="4">No task found</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div id="filterModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Filter Tasks</h2>
+                <div class="filter-options">
+                    <label>
+                        <input type="radio" name="filter" value="all" checked>
+                        All Tasks
+                    </label>
+                    <label>
+                        <input type="radio" name="filter" value="pending">
+                        Pending
+                    </label>
+                    <label>
+                        <input type="radio" name="filter" value="completed">
+                        Completed
+                    </label>
+                    <label>
+                        <input type="radio" name="filter" value="overdue">
+                        Overdue
+                    </label>
+                </div>
+                <button id="applyFilterButton" class="apply-filter-button">Apply Filter</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
+
